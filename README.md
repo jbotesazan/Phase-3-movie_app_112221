@@ -1,19 +1,17 @@
 # Activity
+[Starter Code](https://github.com/learn-co-students/Phase-3-movie_app_101121)
 
 # Run the APP
 1. cd into movies_app
 2. In the terminal, run `bundle install`
 2. In the terminal, run  `ruby ./bin/run.rb` to start the CLI
 3. If the following error message is returned: zsh: permission denied: ./bin/run.rb, run the following command: `chmod +x ruby ./bin/run.rb`
-
-If you see 'welcome to phase-3' print in your terminal you should be good to go.
+ 
 
 # Deliverables 
-A local theater has asked you to make a CLI app to help them sell and track tickets. 
+Create a ticket class to add consistency, reusability and expand on features.  
 
-You will be doing all of the following in lib/cli.rb
-
-1. Create an array inside of the initialize_app called movies that is a list of movies. 
+1. Start by cleaning up the CLI. Delete the ticket array and move the menu logic into it's own method. Call the menu method inside of initialize_app. The Movies array can be moved to the 1 case block. Delete the logic inside of the 2 case block.
  <details>
       <summary>
         solution 
@@ -26,7 +24,7 @@ You will be doing all of the following in lib/cli.rb
      </details>
 <br/>
 
-2. Create a menu. Start by using puts to print a few strings. "Welcome to Flatiron Movies" ,  "Please choose an option:", "1. List all Movies", "0. to exit"
+2. Create a new file. Ticket.rb in the lib folder. Create a Ticket Class in Ticket.rb. Back in cli.rb, refactor the create_ticket method to print Ticket.new to the console. Test that a Ticket is being created. You should see `#<Ticket:some mix of numbers and characters>` in the console.
 
  <details>
       <summary>
@@ -37,16 +35,11 @@ You will be doing all of the following in lib/cli.rb
         alt="travel app solution"
         style="margin-right: 10px;" />
       <hr/>
-     </details>
-<br/>
-
-3. Use `gets.strip` to get an input from a user. Create an if or case statement, with the following conditions. If the user inputs 1, iterate through the movies array and puts all the titles. else exit the application. 
-
- <details>
-      <summary>
-        solution 
-      </summary>
-      <hr/>
+      <p> In Ticket.rb </p>
+        <hr/>
+        <img src="assets/image_3.png"
+        alt="travel app solution"
+        style="margin-right: 10px;" />
         <img src="assets/image_3.png"
         alt="travel app solution"
         style="margin-right: 10px;" />
@@ -54,23 +47,7 @@ You will be doing all of the following in lib/cli.rb
      </details>
 <br/>
 
-4. practice using a binding.pry. First put a binding.pry in the first case before movies. 
-Next put one inside of the each iterating through movies (You'll need to break the each into multiple lines). run the app. When you get to the first pry type movies in the terminal to verify the movies array. type exit to continue to the next pry. type movie to verify the movie. type exit to continue to the next pry until you've looped through the entire array. Remove the binding.pry's once done.
-
- <details>
-      <summary>
-        solution 
-      </summary>
-      <hr/>
-        <img src="assets/image_4.png"
-        alt="travel app solution"
-        style="margin-right: 10px;" />
-      <hr/>
-     </details>
-<br/>
-
-5. Below the movie array create a tickets array with a few tickets in it. The tickets should be hashes with a name, movie, id and price.
-
+3. In the Ticket class. Create an initialize method that takes a name, and a title as params. Create instance variables for name and title and set it to the params. Create an additional instance variable price and set it to 5.00.
  <details>
       <summary>
         solution 
@@ -83,8 +60,22 @@ Next put one inside of the each iterating through movies (You'll need to break t
      </details>
 <br/>
 
-6. Add a puts to your menu '2. List ticket holder names'. Add a case "2" to your case statement that puts an array of the names of everyone who has a ticket. (map)
 
+4. In cli.rb refactor create_ticket to use gets.strip to get a name and title from the user. Use those inputs as arguments to Ticket.new. Set Ticket.new to a variable `t1` (You wont be able to access ticket attributes quite yet)
+
+ <details>
+      <summary>
+        solution 
+      </summary>
+      <hr/>
+        <img src="assets/image_9.png"
+        alt="travel app solution"
+        style="margin-right: 10px;" />
+      <hr/>
+     </details>
+<br/>
+
+5. In Ticket.rb add `attr_accessor` to the top of the file with name, title and price. Add a binding.pry to the bottom of create_ticket in cli.rb. Run the app and test your code. When you get to the binding.pry verify that you can read name, title and price with. `t1.name`, `t1.title`, `t1.price`. Try setting the price to a new value, to assure that you can write to these instance variables.
 
  <details>
       <summary>
@@ -94,21 +85,11 @@ Next put one inside of the each iterating through movies (You'll need to break t
         <img src="assets/image_6.png"
         alt="travel app solution"
         style="margin-right: 10px;" />
-      <hr/>
-     </details>
-<br/>
-
-7. Create a method that will create a ticket. Add a puts '3. Add ticket', and a case that calls that method. (You do not need to add the ticket to the tickets array)
-
- <details>
-      <summary>
-        solution 
-      </summary>
-      <hr/>
         <img src="assets/image_7.png"
         alt="travel app solution"
         style="margin-right: 10px;" />
-        <img src="assets/image_8.png"
+      <hr/>
+         <img src="assets/image_8.png"
         alt="travel app solution"
         style="margin-right: 10px;" />
       <hr/>
@@ -117,10 +98,40 @@ Next put one inside of the each iterating through movies (You'll need to break t
 
 ### Bonus
 
-Add more tickets to the ticket array for the following.
+6. Add the @@all Class variable to 
+7. Shovel self into @@all at the end of initialize
+8. Create a class method accessing @@all
 
-9. Change tickets to a global variable stored outside of initialize_app
-8. Find a ticket by a name
-9. Add a ticket to the tickets array, once a ticket is created. 
-10. Filter out tickets by a specific title
-11. Update every ticket price by 1 dollar
+
+ <details>
+      <summary>
+        solution 
+      </summary>
+      <hr/>
+        <img src="assets/image_10.png"
+        alt="travel app solution"
+        style="margin-right: 10px;" />
+      <hr/>
+     </details>
+<br/>
+
+9. In cli.rb, refactor the 2 case block to iterate over Ticket.all and print every ticket holder name. In Create Ticket, call the menu method after the ticket is created. Run your app, create a few tickets and run "2. List Ticket holder names"
+
+ <details>
+      <summary>
+        solution 
+      </summary>
+      <hr/>
+        <img src="assets/image_11.png"
+        alt="travel app solution"
+        style="margin-right: 10px;" />
+      <hr/>
+      <p>In Create Ticket</p>
+      <hr/>
+        <img src="assets/image_12.png"
+        alt="travel app solution"
+        style="margin-right: 10px;" />
+      <hr/>
+     </details>
+<br/>
+
