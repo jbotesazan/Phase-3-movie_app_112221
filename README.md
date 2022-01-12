@@ -8,7 +8,7 @@
 
 
 # Deliverables 
-Add CRUD/aggregate methods to ticket and create a new class
+Add CRUD/aggregate methods to ticket and create a new class. 
 0. If you have already added @@all to tickets skip this step. Add '@@all = []' to Ticket. At the end of the instance method shovel in self to @@all. Create a class method that returns @@all.
  <details>
       <summary>
