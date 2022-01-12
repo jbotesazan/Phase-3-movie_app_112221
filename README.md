@@ -117,40 +117,6 @@ finds a ticket based on name and movie, runs the discount method.
 
 ### Bonus
 
-6. Add the @@all Class variable to 
-7. Shovel self into @@all at the end of initialize
-8. Create a class method accessing @@all
+6. Add more class or instnce methods of your choice! What's some functionality that would be useful for this movie theater?
 
-
- <details>
-      <summary>
-        solution 
-      </summary>
-      <hr/>
-        <img src="assets/image_10.png"
-        alt="travel app solution"
-        style="margin-right: 10px;" />
-      <hr/>
-     </details>
-<br/>
-
-9. In cli.rb, refactor the 2 case block to iterate over Ticket.all and print every ticket holder name. In Create Ticket, call the menu method after the ticket is created. Run your app, create a few tickets and run "2. List Ticket holder names"
-
- <details>
-      <summary>
-        solution 
-      </summary>
-      <hr/>
-        <img src="assets/image_11.png"
-        alt="travel app solution"
-        style="margin-right: 10px;" />
-      <hr/>
-      <p>In Create Ticket</p>
-      <hr/>
-        <img src="assets/image_12.png"
-        alt="travel app solution"
-        style="margin-right: 10px;" />
-      <hr/>
-     </details>
-<br/>
 
