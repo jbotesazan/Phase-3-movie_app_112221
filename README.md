@@ -12,7 +12,7 @@ Introduction to Table Relations in SQL and Associating Tables with Foreign Keys 
 
 1. Open DB Browser for SQLite. Click `Open Database` and through the finder navigate to `development.db` in `Phase-3-movie_app_112221/db and open it.
 
-  <img src="./assets/image_1.png" alt="db folder" style="margin-right: 10px;" />
+  <img src="./assets/image1.png" alt="db folder" style="margin-right: 10px;" />
   <img src="./assets/image_2.png" alt="open db" style="margin-right: 10px;" />
   <img src="./assets/image_3.png" alt="development.sqlite" style="margin-right: 10px;" />
 
