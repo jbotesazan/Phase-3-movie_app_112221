@@ -9,6 +9,7 @@ SQL Insert, Select, Update and Delete and
 Introduction to Table Relations in SQL and Associating Tables with Foreign Keys and SQL Joins
 
 
+
 1. Open DB Browser for SQLite. Click `Open Database` and through the finder navigate to `development.db` in `Phase-3-movie_app_112221/db and open it.
 
   <img src="./assets/image_1.png" alt="db folder" style="margin-right: 10px;" />
@@ -53,6 +54,7 @@ CREATE TABLE tickets(
       <hr/>
  </details>
 
+
  4. Clear the the SQL terminal. Execute a SQL command that selects all of the data from tickets. Clear the SQL terminal and execute a second command that selects all of the data from movies.
 
   <details>
@@ -78,3 +80,4 @@ CREATE TABLE tickets(
         ON tickets.movie_id = movies.id;  
       <hr/>
  </details>
+
