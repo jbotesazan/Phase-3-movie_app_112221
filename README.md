@@ -1,7 +1,7 @@
 # Activity
 [Download SQL browser](https://sqlitebrowser.org/dl/)
 
-
+>Note if you are having git issues delete the local repo and re-clone
 # Deliverables
 Practice SQL commands
 >Note: if you get stuck review 
@@ -36,7 +36,7 @@ CREATE TABLE tickets(
 
 
 ```
-  <img src="./assets/image_4.png" alt="development.sqlite" style="margin-right: 10px;" />
+  <img src="./assets/image4.png" alt="development.sqlite" style="margin-right: 10px;" />
 
 3. Clear the create table from the SQL terminal. Execute a SQL command that inserts data to our table. Create 3 rows in each table.
 
