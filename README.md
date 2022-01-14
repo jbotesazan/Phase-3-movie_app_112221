@@ -70,7 +70,7 @@ Use create_table to create a table for each migration. tickets should have a nam
       <hr/>
  </details>
 
- 5. Create a Ticket model and Movie Model that inherits from `ActiveRecord::Base`
+ 5. Create a model folder inside of app. Create a Ticket model and Movie Model that inherits from `ActiveRecord::Base` inside of the model folder.
 
    <details>
       <summary>
