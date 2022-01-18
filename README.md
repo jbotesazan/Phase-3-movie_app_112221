@@ -99,7 +99,7 @@ ReceiptLineItem: receipt_id, food_id
       <hr/>
       <img src="assets/image_9.png" alt="has many tickets" style="margin-right: 10px;" />
         
-      <img src="assets/image_10.png" alt="belongs to movie" style="margin-right: 10px;" />
+      <img src="assets/image10.png" alt="belongs to movie" style="margin-right: 10px;" />
       <hr/>
  </details>
 
@@ -111,9 +111,9 @@ ReceiptLineItem: receipt_id, food_id
       <hr/>
       <img src="assets/image11.png" alt="join model" style="margin-right: 10px;" />
         
-      <img src="assets/image_12.png" alt="receipt has many through" style="margin-right: 10px;" />
+      <img src="assets/image12.png" alt="receipt has many through" style="margin-right: 10px;" />
 
-      <img src="assets/image_13.png" alt="food has many through" style="margin-right: 10px;" />
+      <img src="assets/image13.png" alt="food has many through" style="margin-right: 10px;" />
       <hr/>
  </details>
 
