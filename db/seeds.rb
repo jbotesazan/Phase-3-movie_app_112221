@@ -13,10 +13,10 @@ Ticket.create(name:'Kambei', price:5.00, movie: Movie.second)
 Ticket.create(name:'Shichirōji', price:5.00, movie: Movie.second)
 
 
-Receipt.create(name:'Shichirōji')
-Receipt.create(name:'Roy')
-Receipt.create(name:'rose')
-Receipt.create(name:'Vito')
+r1 = Receipt.create(name:'Shichirōji')
+r2 = Receipt.create(name:'Roy')
+r3 = Receipt.create(name:'rose')
+r4 = Receipt.create(name:'Vito')
 
 Food.create(name:"popcorn", price:10.00)
 Food.create(name:"jr.mints", price:5.00)
@@ -29,6 +29,11 @@ ReceiptLineItem.create(receipt:Receipt.second, food:Food.third)
 ReceiptLineItem.create(receipt:Receipt.third, food:Food.second)
 ReceiptLineItem.create(receipt:Receipt.third, food:Food.third)
 
+#This method updates the receipt total to the price sum of every related food item.
+r1.calculate_total
+r2.calculate_total
+r3.calculate_total
+r4.calculate_total
 
 
 
