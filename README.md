@@ -3,129 +3,19 @@ Clone down the following starter
 
 
 # Deliverables
-Add migrations relationships. Our tickets should belong to one movie, a movie can have many tickets. We want some new models for managing our snack stand at the movie theater. A receipt can have many receipt_line_items, and many foods through receipt_line_items. A food can have many receipt_line_items, and many receipts through receipt_line_items. ReceiptLineItem will be the join model.
+Our app has a bunch of bugs in it! With your group debug the app and get it working again.   
 
->Note: if you get stuck review 
-Active Record Migrations, Writing Migrations, Intro to Rake, 
+Let the errors happen one at a time.   
 
-0. Draw out a Domain Model for the following.
+Before fixing anything, read/discover the error and discuss it with your group. What might be obvious to you may not be obvious to someone else so make you discuss as a group how you got to a specific conclusion. 
 
-one-to-many
-Ticket: name, price movie_id
-Movie: title, director, description, showing
+The purpose of this is not to debug the application as quickly as possible, but to practice good debugging conventions. Even if you think you know the fix for a specific bug, take a moment to review the steps of the debugging process. 
 
-many-to-many
-Receipt: customer_name
-Food: food_name, price
-ReceiptLineItem: receipt_id, food_id
-
-
-
-1. If you haven't already, add an id column to tickets that references movie_id.
->
- <details>
-      <summary>
-        solution 
-      </summary>
-      `bundle exec rake db:create_migration NAME=add_column_to_tickets`
-      <hr/>
-        <img src="assets/image_1.png"
-        alt="add column"
-        style="margin-right: 10px;" />
-      <hr/>
- </details>
-
-2. Use rake to create three migrations one named `create_receipt`, `create_food`, and `create_receipt_line_item` with the attributes listed in step 0.  
- <details>
-      <summary>
-        solution 
-      </summary>
-      bundle exec rake db:create_migration NAME=create_receipts
-      bundle exec rake db:create_migration NAME=create_foods  
-      bundle exec rake db:create_migration NAME=create_receipt_line_items
-      <hr/>
-        <img src="assets/image_2.png"
-        alt="receipts"
-        style="margin-right: 10px;" />
-        <img src="assets/image_3.png"
-        alt="foods"
-        style="margin-right: 10px;" />
-        <img src="assets/image_4.png"
-        alt="receipt_line_items"
-        style="margin-right: 10px;" />
-      <hr/>
- </details>
-
-3. Create models for `Receipt`, `Food`, and `ReceiptLineItems` 
- <details>
-      <summary>
-        solution 
-      </summary>
-      <hr/>
-        <img src="assets/image_5.png"
-        alt="files"
-        style="margin-right: 10px;" />
-        <img src="assets/image_6.png"
-        alt="foods"
-        style="margin-right: 10px;" />
-        <img src="assets/image_7.png"
-        alt="receipt"
-        style="margin-right: 10px;" />
-        <img src="assets/image_8.png"
-        alt="receipt_line_items"
-        style="margin-right: 10px;" />
-      <hr/>
- </details>
-
-
- 4. run `bundle exec rake db:migrate` to migrate your tables. Verify the schema.rb was created correctly.
-  <details>
-      <summary>
-        solution 
-      </summary>
-      <hr/>
-      <img src="assets/image_5.png" alt="migration terminal" style="margin-right: 10px;" />
-        
-      <img src="assets/image_6.png" alt="schema" style="margin-right: 10px;" />
-      <hr/>
- </details>
-
- 5. Add a has many tickets association to the Movie model and a belongs to movie association to the Ticket model. 
-
-   <details>
-      <summary>
-        solution 
-      </summary>
-      <hr/>
-      <img src="assets/image_9.png" alt="has many tickets" style="margin-right: 10px;" />
-        
-      <img src="assets/image10.png" alt="belongs to movie" style="margin-right: 10px;" />
-      <hr/>
- </details>
-
- 6. Add two belongs to association to the ReceiptLineItem model. Add a has many receipt_line_items and a has many foods through receipt_line_items association to the Receipt model. Finally, add a has many receipt_line_items and a has many receipts through receipt_line_items association to the Food model.
-   <details>
-      <summary>
-        solution 
-      </summary>
-      <hr/>
-      <img src="assets/image11.png" alt="join model" style="margin-right: 10px;" />
-        
-      <img src="assets/image12.png" alt="receipt has many through" style="margin-right: 10px;" />
-
-      <img src="assets/image13.png" alt="food has many through" style="margin-right: 10px;" />
-      <hr/>
- </details>
-
- 7. Create some seed data and test these associations in the console. 
-
-    <details>
-      <summary>
-      </summary>
-      <hr/>
-      <img src="assets/image14.png" alt="seeds" style="margin-right: 10px;" />
-      <hr/>
- </details>
-
- 
-
+Debugging process
+- Consider the goal of the code.
+- What is the expected behavior?
+- What are all the components that make up this behavior?
+- What does the error/stack trace say?
+- What can we assume about the error?
+- Think about how to debug each assumption.
+- Debug and repeat until the assumption is true.
