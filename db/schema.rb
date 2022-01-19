@@ -10,13 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_14_172249) do
+ActiveRecord::Schema.define(version: 2022_01_19_165109) do
+
+  create_table "foods", force: :cascade do |t|
+    t.string "name"
+    t.string "price"
+  end
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.string "director"
     t.string "description"
     t.boolean "showing"
+  end
+
+  create_table "receipt_line_items", force: :cascade do |t|
+    t.integer "receipt_id"
+    t.integer "food_id"
+  end
+
+  create_table "receipts", force: :cascade do |t|
+    t.string "name"
+    t.float "total"
   end
 
   create_table "tickets", force: :cascade do |t|

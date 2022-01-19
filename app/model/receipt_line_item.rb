@@ -1,0 +1,4 @@
+class ReceiptLineItem < ActiveRecord::Base
+    belongs_to :food 
+    belongs_to :receipt
+end 
