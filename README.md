@@ -1,21 +1,53 @@
 # Activity
-Clone down the following starter
-
 
 # Deliverables
-Our app has a bunch of bugs in it! With your group debug the app and get it working again.   
+Create sinatra routes 
 
-Let the errors happen one at a time.   
+>Note: if you get stuck review Sinatra with Active Record: POST/PATCH/DELETE Requests
+>Note: `bundle exec rerun -b 'rackup config.ru'` will run your server.
 
-Before fixing anything, read/discover the error and discuss it with your group. What might be obvious to you may not be obvious to someone else so make you discuss as a group how you got to a specific conclusion. 
+0. Bundle, migrate and seed
 
-The purpose of this is not to debug the application as quickly as possible, but to practice good debugging conventions. Even if you think you know the fix for a specific bug, take a moment to review the steps of the debugging process. 
 
-Debugging process
-- Consider the goal of the code.
-- What is the expected behavior?
-- What are all the components that make up this behavior?
-- What does the error/stack trace say?
-- What can we assume about the error?
-- Think about how to debug each assumption.
-- Debug and repeat until the assumption is true.
+1. In the controller folder create `application_controller.rb`. Create a `ApplicationController` class that inherits from `Sinatra::Base`. Set the default content type to 'application/json'. Add a '/' get route that returns `hello world`. Start your server and verify that `http://localhost:9292/` returns `hello world` in the browser.
+ <details>
+      <summary>
+        solution 
+      </summary>
+      <hr/>
+        <img src="assets/image_16.png"
+        alt="tickets controller"
+        style="margin-right: 10px;" />
+      <hr/>
+ </details>
+
+2. Create a `movies` get route that returns all of the movies in the db.
+
+ <details>
+      <summary>
+        solution 
+      </summary>
+      <hr/>
+        <img src="assets/image_17.png"
+        alt="config.ru"
+        style="margin-right: 10px;" />
+      <hr/>
+ </details>
+
+3. Create a dynamic route that will pull one movie from the db and send it to the browser.  
+> Hint: You'll need the params hash for this. Take a moment to discuss the params hash with your group.
+ <details>
+      <summary>
+        solution 
+      </summary>
+      <hr/>
+        <img src="assets/image_18.png"
+        alt="includes"
+        style="margin-right: 10px;" />
+      <hr/>
+ </details>
+
+### Bonus 
+4. Create a get all tickets route  
+
+5. Create a get one ticket route 

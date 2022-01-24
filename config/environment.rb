@@ -1,13 +1,10 @@
-require "bundler/setup"
+# This is an _environment variable_ that is used by some of the Rake tasks to determine
+# if our application is running locally in development, in a test environment, or in production
+ENV['RACK_ENV'] ||= "development"
 
+# Require in Gems
+require 'bundler/setup'
+Bundler.require(:default, ENV['RACK_ENV'])
 
-ENV["RACK_ENV"] ||= "development"
-
-Bundler.require(:default, ENV["RACK_ENV"])
-DB = SQLite3::Database.new("db/development.db")
-DB.results_as_hash = true
-
-require "date"
-require "active_support/core_ext/integer/time"
-require "active_support/core_ext/date/calculations"
-require_all "app"
+# Require in all files in 'app' directory
+require_all 'app'
