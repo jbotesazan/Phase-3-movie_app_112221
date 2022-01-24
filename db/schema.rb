@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 2022_01_19_165109) do
   create_table "tickets", force: :cascade do |t|
     t.string "name"
     t.float "price"
+    t.integer "movie_id"
+    t.index ["movie_id"], name: "index_tickets_on_movie_id"
   end
 
 end
